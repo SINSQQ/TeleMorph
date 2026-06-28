@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telemorph"
+version = "1.0.0"
+description = "Unified Telegram session conversion library — wraps TGConvertor and opentele2 into a single, easy-to-use API."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "TeleMorph Team", email = "team@telemorph.dev" }]
+requires-python = ">=3.9"
+keywords = ["telegram", "telethon", "pyrogram", "kurigram", "tdata", "session", "converter", "opentele"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "aiosqlite>=0.18.0",
+]
+
+[project.optional-dependencies]
+telethon = ["telethon>=1.34.0"]
+pyrogram = ["pyrogram>=2.0.106"]
+kurigram = ["kurigram>=2.0.4"]
+opentele = ["opentele>=1.27.0"]
+all = [
+    "telethon>=1.34.0",
+    "pyrogram>=2.0.106",
+    "kurigram>=2.0.4",
+    "opentele>=1.27.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/telemorph/telemorph"
+Documentation = "https://telemorph.readthedocs.io"
+Repository = "https://github.com/telemorph/telemorph"
+Issues = "https://github.com/telemorph/telemorph/issues"
+Changelog = "https://github.com/telemorph/telemorph/blob/main/CHANGELOG.md"
+
+[project.scripts]
+telemorph = "telemorph.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["telemorph*"]
+exclude = ["examples*", "tests*", "docs*"]
+
+[tool.setuptools.package-data]
+telemorph = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra -q --strict-markers"
+markers = [
+    "slow: marks tests as slow",
+    "integration: marks tests as integration (require network)",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "DTZ", "T20", "PT"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true

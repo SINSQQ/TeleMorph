@@ -1,0 +1,9 @@
+# Core
+asyncio
+aiosqlite>=0.18.0
+
+# Optional — pick the ones you need
+telethon>=1.34.0
+pyrogram>=2.0.106
+kurigram>=2.0.4
+opentele>=1.27.0
