@@ -10,7 +10,7 @@ readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "TeleMorph Team", email = "team@telemorph.dev" }]
 requires-python = ">=3.9"
-keywords = ["telegram", "telethon", "pyrogram", "kurigram", "tdata", "session", "converter", "opentele"]
+keywords = ["telegram", "telethon", "pyrogram", "kurigram", "tdata", "session", "converter", "opentele2"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -31,12 +31,12 @@ dependencies = [
 telethon = ["telethon>=1.34.0"]
 pyrogram = ["pyrogram>=2.0.106"]
 kurigram = ["kurigram>=2.0.4"]
-opentele = ["opentele>=1.27.0"]
+opentele2 = ["opentele2>=1.2.1"]
 all = [
     "telethon>=1.34.0",
     "pyrogram>=2.0.106",
     "kurigram>=2.0.4",
-    "opentele>=1.27.0",
+    "opentele2>=1.2.1",
 ]
 dev = [
     "pytest>=7.0",
